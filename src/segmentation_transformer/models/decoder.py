@@ -1,4 +1,4 @@
-# src/segformer/models/decoder.py
+# src/segmentation_transformer/models/decoder.py
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -45,7 +45,7 @@ class FusionBlock(nn.Module):
         # CHANGED (our adjustment): keep the identity skip instead of GELU after addition.
         return merged + self.conv(merged)
     
-class SegFormerDecoder(nn.Module):
+class SegmentationTransformerDecoder(nn.Module):
     def __init__(self, channels=64):
         super().__init__()
         self.fuse3 = FusionBlock(channels)

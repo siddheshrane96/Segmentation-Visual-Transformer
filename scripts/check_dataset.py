@@ -1,5 +1,5 @@
 import torch
-from segformer.datasets.dataloaders import create_dataloaders
+from segmentation_transformer.datasets.dataloaders import create_dataloaders
 import numpy as np
 import matplotlib.pyplot as plt
 

@@ -1,21 +1,21 @@
-# src/segformer/models/segformer.py
+# src/segmentation_transformer/models/segmentation_transformer.py
 import torch.nn as nn
 
-from .encoder import SegFormerEncoder
-from .decoder import Reassemble, SegFormerDecoder
+from .encoder import SegmentationTransformerEncoder
+from .decoder import Reassemble, SegmentationTransformerDecoder
 
-class SegFormer(nn.Module):
+class SegmentationTransformer(nn.Module):
     def __init__(self, image_size=(240,320), patch_size=16, d_model=192, decoder_channels=64):
         super().__init__()
         self.patch_size = patch_size
-        self.encoder = SegFormerEncoder(image_size, patch_size, d_model, 4, 4)
+        self.encoder = SegmentationTransformerEncoder(image_size, patch_size, d_model, 4, 4)
         self.reassemble = nn.ModuleList([
             Reassemble(d_model, decoder_channels, 4.0),
             Reassemble(d_model, decoder_channels, 2.0),
             Reassemble(d_model, decoder_channels, 1.0),
             Reassemble(d_model, decoder_channels, 0.5),
         ])
-        self.decoder = SegFormerDecoder(decoder_channels)
+        self.decoder = SegmentationTransformerDecoder(decoder_channels)
 
     def forward(self, images):
         _, _, h, w = images.shape

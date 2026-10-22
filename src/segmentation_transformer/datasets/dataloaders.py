@@ -1,6 +1,6 @@
 import torch
 from torch.utils.data import DataLoader, Subset
-from segformer.datasets.oxford_pets import OxfordPetsSegmentation
+from segmentation_transformer.datasets.oxford_pets import OxfordPetsSegmentation
 
 def create_dataloaders(
     data_root="data",

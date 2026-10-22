@@ -1,7 +1,7 @@
 import torch
 from tqdm.auto import tqdm
 
-from segformer.engine.metrics import SegmentationMetrics
+from segmentation_transformer.engine.metrics import SegmentationMetrics
 
 def run_epoch(
     model,

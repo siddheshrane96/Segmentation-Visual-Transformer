@@ -2,8 +2,8 @@ import torch
 import numpy as np
 import matplotlib.pyplot as plt
 
-from segformer.datasets.dataloaders import create_dataloaders
-from segformer.models.segformer import SegFormer
+from segmentation_transformer.datasets.dataloaders import create_dataloaders
+from segmentation_transformer.models.segmentation_transformer import SegmentationTransformer
 
 
 def main():
@@ -16,7 +16,7 @@ def main():
         batch_size=10
     )
 
-    model = SegFormer(
+    model = SegmentationTransformer(
         image_size=(240, 320),
         patch_size=16,
         d_model=192,
@@ -24,7 +24,7 @@ def main():
     ).to(device)
 
     checkpoint = torch.load(
-        "checkpoints/segformer_pets_v1/best.pt",
+        "checkpoints/segmentation_transformer_pets_v1/best.pt",
         map_location=device,
         weights_only=True
     )

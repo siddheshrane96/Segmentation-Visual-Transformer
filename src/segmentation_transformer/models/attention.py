@@ -1,4 +1,4 @@
-# src/segformer/models/attention.py
+# src/segmentation_transformer/models/attention.py
 import torch.nn as nn
 import math
 import torch

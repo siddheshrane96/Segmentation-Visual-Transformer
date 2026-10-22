@@ -1,4 +1,4 @@
-# src/segformer/models/encoder.py
+# src/segmentation_transformer/models/encoder.py
 import torch
 import torch.nn as nn
 from .transformer import TransformerEncoder
@@ -51,7 +51,7 @@ class PatchEmbedding(nn.Module):
         tokens = s4.flatten(2).transpose(1,2) # shape (B, H/16 * W/16, D_model)!
         return tokens, s1, s2
     
-class SegFormerEncoder(nn.Module):
+class SegmentationTransformerEncoder(nn.Module):
     def __init__(self, image_size=(240,320), patch_size=16, d_model=192, num_heads=4, num_layers=4):
         super().__init__()
         self.H, self.W = image_size

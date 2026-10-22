@@ -1,4 +1,4 @@
-# src/segformer/models/transformer.py
+# src/segmentation_transformer/models/transformer.py
 import torch.nn as nn
 from .attention import MultiHeadSelfAttention
 

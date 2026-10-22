@@ -2,10 +2,10 @@ from pathlib import Path
 
 import torch
 
-from segformer.datasets.dataloaders import create_dataloaders
-from segformer.models.segformer import SegFormer
-from segformer.losses.segmentation import SegmentationLoss
-from segformer.engine.trainer import run_epoch
+from segmentation_transformer.datasets.dataloaders import create_dataloaders
+from segmentation_transformer.models.segmentation_transformer import SegmentationTransformer
+from segmentation_transformer.losses.segmentation import SegmentationLoss
+from segmentation_transformer.engine.trainer import run_epoch
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
     EPOCHS = 30  # Additional epochs to train
     LEARNING_RATE = 1e-5
 
-    CHECKPOINT_DIR = Path("checkpoints/segformer_pets_v1")
+    CHECKPOINT_DIR = Path("checkpoints/segmentation_transformer_pets_v1")
     CHECKPOINT_DIR.mkdir(parents=True, exist_ok=True)
 
     BEST_CHECKPOINT = CHECKPOINT_DIR / "best.pt"
@@ -46,7 +46,7 @@ def main():
     # Model
     # ---------------------------------
 
-    model = SegFormer(
+    model = SegmentationTransformer(
         image_size=IMAGE_SIZE,
         patch_size=16,
         d_model=192,

@@ -1,6 +1,6 @@
 import torch
 
-from segformer.models.segformer import SegFormer
+from segmentation_transformer.models.segmentation_transformer import SegmentationTransformer
 
 
 def main():
@@ -9,7 +9,7 @@ def main():
         "cuda" if torch.cuda.is_available() else "cpu"
     )
 
-    model = SegFormer(
+    model = SegmentationTransformer(
         image_size=(240, 320),
         patch_size=16,
         d_model=192,
