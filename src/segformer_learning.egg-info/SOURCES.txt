@@ -1,0 +1,13 @@
+pyproject.toml
+src/segformer/__init__.py
+src/segformer/datasets/__init__.py
+src/segformer/datasets/dataloaders.py
+src/segformer/datasets/oxford_pets.py
+src/segformer/engine/__init__.py
+src/segformer/losses/__init__.py
+src/segformer/models/__init__.py
+src/segformer_learning.egg-info/PKG-INFO
+src/segformer_learning.egg-info/SOURCES.txt
+src/segformer_learning.egg-info/dependency_links.txt
+src/segformer_learning.egg-info/requires.txt
+src/segformer_learning.egg-info/top_level.txt
